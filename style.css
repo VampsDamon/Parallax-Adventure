@@ -1,0 +1,111 @@
+*{
+    /* Remove initial margin and Padding and set box property as a border box  */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Oswald', sans-serif;
+}
+#wrapper{
+    /* set Height as view port  */
+    height: 100vh; 
+    /* Its help to not scroll in right side and overflow -y help to scroll down side */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* We set prespective to work on Z-axis*/
+    perspective: 10px;
+}
+.container{
+    /* Positon of container is Relative cause we have to conside two background Images using
+     postion absolute which work on nearest not-static  */
+    position: relative;
+    display: flex;
+    /* center all the contents */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* It is use to set overlapping */
+    z-index: -1;
+    /* It's help to preserved the 3-D effects */
+    transform-style: preserve-3d;
+    object-fit: cover;
+
+}
+.background{
+    /* It is use to move image far from front view */  
+    /* -40px move image 40px inside the screen from front eye and scale(5) is use to enlarge the image 
+    at that position */
+    transform: translateZ(-40px) scale(5);
+}
+.foreground{
+    transform: translateZ(-20px)scale(3);
+}
+.foreground ,.background{
+    /* Absolute help background image to overlap  */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* Object fit use to fit image in container (by cover all the width)*/
+    object-fit: cover;
+}
+h1{
+    position: absolute;
+    top: -15rem;
+    /* transform: translateX(-50%); */
+    font-size: 9rem;
+    letter-spacing: 9px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateZ(-23px) scale(3);
+}
+
+section{
+    background-color: rgb(45, 45, 45);
+     color: white;
+     padding: 5rem 0;
+}
+.secHeading{
+    font-size: 4rem;
+    padding: 0 3rem;
+}
+
+.text{
+    font-size:1.3rem;
+    padding: 0px 3rem;
+    margin: 4rem 0;
+}
+.bg{ 
+    position: relative;
+    width: 100%;
+    /* It is used to fixed Background Image */
+    background-attachment: fixed;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+.description{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(0%) translateX(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    
+}
